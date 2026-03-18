@@ -1,0 +1,9 @@
+{
+  "nombre": "Laptop Dell XPS 13",
+  "descripcion": "Laptop ultraportátil de alto rendimiento con procesador Intel Core i7",
+  "precio": 1299.99,
+  "stock": 50,
+  "almacen": "Almacen-Principal",
+  "sku": "SKU-DELL-XPS13",
+  "activo": true
+}

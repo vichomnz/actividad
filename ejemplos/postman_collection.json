@@ -1,0 +1,104 @@
+{
+  "collection_name": "Microservicios E-Commerce",
+  "description": "Collection completa de los 3 microservicios (Producto, Pedido, Soporte)",
+  "endpoints": [
+    {
+      "name": "Crear Producto",
+      "method": "POST",
+      "url": "{{base_url}}/productos",
+      "body_type": "raw",
+      "body": "{\"nombre\":\"iPhone 14\",\"descripcion\":\"Smartphone Apple\",\"precio\":999.99,\"stock\":100,\"almacen\":\"Almacen-Centro\",\"sku\":\"SKU-IPHONE14\",\"activo\":true}"
+    },
+    {
+      "name": "Obtener Todos los Productos",
+      "method": "GET",
+      "url": "{{base_url}}/productos"
+    },
+    {
+      "name": "Obtener Producto por ID",
+      "method": "GET",
+      "url": "{{base_url}}/productos/1"
+    },
+    {
+      "name": "Obtener Productos por Almacén",
+      "method": "GET",
+      "url": "{{base_url}}/productos/almacen/Almacen-Principal"
+    },
+    {
+      "name": "Actualizar Stock",
+      "method": "PATCH",
+      "url": "{{base_url}}/productos/1/stock",
+      "body_type": "raw",
+      "body": "{\"nuevoStock\":75}"
+    },
+    {
+      "name": "Crear Pedido",
+      "method": "POST",
+      "url": "{{base_url}}/pedidos",
+      "body_type": "raw",
+      "body": "{\"clienteId\":1,\"monto\":999.99,\"direccionEnvio\":\"Calle Principal 123\"}"
+    },
+    {
+      "name": "Obtener Todos los Pedidos",
+      "method": "GET",
+      "url": "{{base_url}}/pedidos"
+    },
+    {
+      "name": "Obtener Pedidos Pendientes",
+      "method": "GET",
+      "url": "{{base_url}}/pedidos/estado/PENDIENTE"
+    },
+    {
+      "name": "Actualizar Estado Pedido",
+      "method": "PATCH",
+      "url": "{{base_url}}/pedidos/1/estado",
+      "body_type": "raw",
+      "body": "{\"estado\":\"CONFIRMADO\"}"
+    },
+    {
+      "name": "Actualizar Estado Pago",
+      "method": "PATCH",
+      "url": "{{base_url}}/pedidos/1/pago",
+      "body_type": "raw",
+      "body": "{\"estadoPago\":\"PAGADO\"}"
+    },
+    {
+      "name": "Crear Ticket Soporte",
+      "method": "POST",
+      "url": "{{base_url}}/soporte",
+      "body_type": "raw",
+      "body": "{\"clienteId\":1,\"asunto\":\"Problema con pedido\",\"descripcion\":\"No recibí mi pedido\",\"prioridad\":\"ALTA\"}"
+    },
+    {
+      "name": "Obtener Tickets Abiertos",
+      "method": "GET",
+      "url": "{{base_url}}/soporte/estado/ABIERTO"
+    },
+    {
+      "name": "Obtener Tickets Críticos",
+      "method": "GET",
+      "url": "{{base_url}}/soporte/prioridad/CRITICA"
+    },
+    {
+      "name": "Asignar Agente",
+      "method": "PATCH",
+      "url": "{{base_url}}/soporte/1/asignar-agente",
+      "body_type": "raw",
+      "body": "{\"agente\":\"Juan Pérez\"}"
+    },
+    {
+      "name": "Resolver Ticket",
+      "method": "PATCH",
+      "url": "{{base_url}}/soporte/1/resolver",
+      "body_type": "raw",
+      "body": "{\"resolucion\":\"Se reenvió el paquete, será entregado pronto\"}"
+    },
+    {
+      "name": "Cerrar Ticket",
+      "method": "PATCH",
+      "url": "{{base_url}}/soporte/1/cerrar",
+      "body_type": "raw",
+      "body": "{\"satisfaccion\":5}"
+    }
+  ]
+}
